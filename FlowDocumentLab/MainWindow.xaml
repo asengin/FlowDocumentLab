@@ -5,8 +5,124 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FlowDocumentLab"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Потоковый документ" Height="650" Width="800">
     <Grid>
-        
+        <FlowDocumentScrollViewer>
+            <FlowDocument>
+                <Paragraph>
+                    <Run FontSize="20" FontWeight="Bold">MVVM: проектирование приложений для Windows</Run>
+                </Paragraph>
+                <Paragraph TextIndent="15">
+                    Чтобы создать приложение, которое удобно тестировать и поддерживать, нужно знать паттерны проектирования.
+                    MVVM – один из лучших вариантов.
+                </Paragraph>
+                <Paragraph  TextIndent="15">
+                    <Bold>MVVM</Bold> — это паттерн разработки, позволяющий разделить приложение на три функциональные части:
+                </Paragraph>
+                <List MarkerStyle="Circle">
+                    <ListItem Padding="5">
+                        <Paragraph>
+                            <Bold>Model</Bold> — основная логика программы (работа с данными, вычисления, запросы и так далее).
+                        </Paragraph>
+                    </ListItem>
+                    <ListItem Padding="5">
+                        <Paragraph>
+                            <Bold>View</Bold> — вид или представление (пользовательский интерфейс).
+                        </Paragraph>
+                    </ListItem>
+                    <ListItem Padding="5">
+                        <Paragraph>
+                            <Bold>ViewModel</Bold> — модель представления, которая служит прослойкой между View и Model.
+                        </Paragraph>
+                    </ListItem>
+                </List>
+                <Paragraph TextIndent="15">
+                    Такое разделение позволяет ускорить разработку и поддерживаемость программы — можно менять один компонент, не затрагивая код другого.
+                </Paragraph>
+                <Paragraph>
+                    <Floater>
+                        <BlockUIContainer>
+                            <Image Source="Data/MVVM.png"></Image>
+                        </BlockUIContainer>
+                    </Floater>
+                </Paragraph>
+                <Paragraph TextIndent="15">
+                    Однако, MVVM может быть сложно освоить, потому что он заметно отличается от более распространённых MVC и событийно-ориентированной разработки приложений.
+                </Paragraph>
+                <Paragraph>
+                    <Run FontSize="20" FontWeight="Bold">Как работает MVVM</Run>
+                </Paragraph>
+                <Paragraph TextIndent="15">
+                    Этот паттерн можно разобрать на примере из реального мира. В главных ролях: знаменитость, PR-менеджер и пресса.
+                </Paragraph>
+                <Table>
+                    <Table.Columns>
+                        <TableColumn/>
+                        <TableColumn/>
+                        <TableColumn/>
+                    </Table.Columns>
+                    <TableRowGroup>
+                        <TableRow>
+                            <TableCell Padding="15">
+                                <Paragraph TextAlignment="Center">
+                                    <Bold>Знаменитость (Model)</Bold>
+                                </Paragraph>
+                            </TableCell>
+                            <TableCell Padding="15">
+                                <Paragraph TextAlignment="Center">
+                                    <Bold>PR-менеджер (ViewModel)</Bold>
+                                </Paragraph>
+                            </TableCell>
+                            <TableCell Padding="15">
+                                <Paragraph TextAlignment="Center">
+                                    <Bold>Пресса (View)</Bold>
+                                </Paragraph>
+                            </TableCell>
+                        </TableRow>
+                        <TableRow>
+
+                        </TableRow>
+                        <TableRow>
+                            <TableCell Padding="15">
+                                <Paragraph>
+                                    Занимается своей непосредственной работой, не отвлекаясь на продвижение. 
+                                    Если нужно, сообщает своему менеджеру, что произошло что-то, о чём нужно рассказать прессе.
+                                </Paragraph>
+                            </TableCell>
+                            <TableCell Padding="15">
+                                <Paragraph>
+                                    Получает информацию от знаменитости и передаёт её прессе. Также может передать своему 
+                                    работодателю запрос от какой-нибудь газеты на проведение интервью или предложение сотрудничества.
+                                </Paragraph>
+                            </TableCell>
+                            <TableCell Padding="15">
+                                <Paragraph>
+                                    Пишет публикации основываясь на данных, полученных от PR-менеджера знаменитости.
+                                </Paragraph>
+                            </TableCell>
+                        </TableRow>
+                    </TableRowGroup>
+                </Table>
+                <Paragraph TextIndent="15">
+                    Все компоненты работают сообща, но при этом их внутренняя кухня никак не связана. Например, пресса может поменять редакцию, изменить макет 
+                    газеты, нанять новых авторов или перейти к другому владельцу. Однако на действиях PR-менеджера это никак не отразится — он будет работать так, как и работал.
+                </Paragraph>
+                <Paragraph TextIndent="15">
+                    Программисту этот паттерн позволяет менять отдельные части приложения, не затрагивая другие. Также он может заниматься только одним компонентом, 
+                    вообще не представляя, как работают остальные. Хотя для полного понимания своей работы нужно разбираться во всех аспектах написания приложений.
+                </Paragraph>
+                <Paragraph>
+                    <Run FontSize="20" FontWeight="Bold">Заключение</Run>
+                </Paragraph>
+                <Paragraph TextIndent="15">
+                    MVVM — один из лучших паттернов, потому что он позволяет уделить всё внимание созданию интерфейса или логики приложения. При этом не нужно вручную
+                    прописывать обработчики событий или работу контроллера, как в MVC.
+                </Paragraph>
+                <Paragraph TextIndent="15">
+                    Главный же недостаток MVVM в том, что его сложно освоить: кроме привязки нужно использовать ещё и команды, а некоторые действия может быть сложно 
+                    выполнить без создания дополнительного класса или метода в файле MainWindow.xaml.cs.
+                </Paragraph>
+            </FlowDocument>
+        </FlowDocumentScrollViewer>
     </Grid>
 </Window>
